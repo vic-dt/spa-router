@@ -8,12 +8,18 @@
         </a>
     </div>
 
-    <nav>
+    <nav class="ml-auto  flex items-end flex-col">
+        <div class="space-x-4">
         <RouterLink :to="{name: 'home'}">Home</RouterLink>
         <RouterLink to="/features">Features</RouterLink>
         <RouterLink to="/pricing">Pricing</RouterLink>
         <RouterLink to="/contact">Contact</RouterLink>
-        
+    </div>
+
+    <div class="space-x-4">
+        <RouterLink to="/pokemon/1"> Pokèmons </RouterLink>
+        <RouterLink to="/auth"> Login </RouterLink>
+    </div>
     </nav>
 </header>
 
