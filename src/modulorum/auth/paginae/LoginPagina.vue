@@ -18,6 +18,7 @@
   <div class="mb-4">
     <label for="password" class="block text-gray-600">Password</label>
     <input
+    v-model="clavem"
       type="password"
       id="password"
       name="password"
@@ -51,14 +52,24 @@
 </template>
 
 <script lang="ts" setup>
+import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 
 const router = useRouter();
+
+const clavem = ref<string>('');
+
 const cumLogin = () => {
+
+  if (clavem.value=== 'ABC-123'){
+    localStorage.setItem('userId', 'ABC-123');
+  }
+
+  const ultimoSitu = localStorage.getItem('lastPath') ?? '/';
+
   
-  router.replace({
-    name:'home'
-  });
+  
+  router.replace(ultimoSitu);
 }
 
 </script>
